@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KWp-Yp-Z7z">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ZoomableImageViewSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PO7-0u-5ms">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="600" translatesAutoresizingMaskIntoConstraints="NO" id="XIh-mf-ZAD">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="XIh-mf-ZAD" firstAttribute="top" secondItem="PO7-0u-5ms" secondAttribute="top" id="EQX-Qg-tlS"/>
+                                    <constraint firstAttribute="trailing" secondItem="XIh-mf-ZAD" secondAttribute="trailing" id="EfW-QX-DJJ"/>
+                                    <constraint firstItem="XIh-mf-ZAD" firstAttribute="leading" secondItem="PO7-0u-5ms" secondAttribute="leading" id="g5U-At-flo"/>
+                                    <constraint firstAttribute="bottom" secondItem="XIh-mf-ZAD" secondAttribute="bottom" id="j11-mg-It6"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="WKJ-iI-bVA"/>
+                                    <outletCollection property="gestureRecognizers" destination="NLa-Du-IsP" appends="YES" id="Zas-Ge-lRM"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PO7-0u-5ms" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="636-dJ-nt7"/>
+                            <constraint firstItem="PO7-0u-5ms" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BjP-kN-gWg"/>
+                            <constraint firstAttribute="trailing" secondItem="PO7-0u-5ms" secondAttribute="trailing" id="Buz-fC-8V1"/>
+                            <constraint firstAttribute="bottom" secondItem="PO7-0u-5ms" secondAttribute="bottom" id="eaX-H3-XUg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zsO-rJ-mFm"/>
+                    <connections>
+                        <outlet property="imageView" destination="XIh-mf-ZAD" id="LN7-RG-fpI"/>
+                        <outlet property="scrollView" destination="PO7-0u-5ms" id="kqc-pV-Ux4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="NLa-Du-IsP">
+                    <connections>
+                        <action selector="didTapScrollView:" destination="BYZ-38-t0r" id="kmO-0h-mQb"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1015" y="662"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Bvv-we-c0b">
+            <objects>
+                <navigationController toolbarHidden="NO" id="KWp-Yp-Z7z" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="52K-yK-ObI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="haM-5G-C3p">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bUK-4Y-qCi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iWL-L9-Gzo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="277" y="662"/>
+        </scene>
+    </scenes>
+</document>
