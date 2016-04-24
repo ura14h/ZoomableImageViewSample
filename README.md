@@ -16,8 +16,8 @@
 ## 動作環境
 
 * Mac OS X Yosemite
-* Xcode 7.0
-* Swift 2.0
+* Xcode 7.3
+* Swift 2.2
 * iOS 8.1 以降
 
 ## ライセンス
